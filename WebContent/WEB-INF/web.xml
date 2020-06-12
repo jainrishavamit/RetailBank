@@ -15,7 +15,7 @@
 	<servlet>
 		<description></description>
 		<servlet-name>LC</servlet-name>
-		<servlet-class>controller.LoginController</servlet-class>
+		<servlet-class>com.tcs.ilp.controller.LoginController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LC</servlet-name>

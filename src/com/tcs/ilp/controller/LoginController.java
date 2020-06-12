@@ -1,5 +1,5 @@
 
-package controller;
+package com.tcs.ilp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.UserBean;
-import service.UserService;
+import com.tcs.ilp.bean.UserBean;
+import com.tcs.ilp.service.UserService;
 
 public class LoginController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException,ServletException{

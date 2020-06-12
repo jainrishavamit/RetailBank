@@ -1,6 +1,6 @@
-package dao;
+package com.tcs.ilp.dao;
 
-import bean.UserBean;
+import com.tcs.ilp.bean.UserBean;
 
 public interface UserDao {
 	UserBean findUserById(String  l_username);

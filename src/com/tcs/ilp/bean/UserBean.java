@@ -1,5 +1,5 @@
 
-package bean;
+package com.tcs.ilp.bean;
 
 public class UserBean {
 	private String l_password,l_role,l_username;

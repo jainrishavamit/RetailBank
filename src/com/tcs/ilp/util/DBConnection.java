@@ -1,4 +1,4 @@
-package util;
+package com.tcs.ilp.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 

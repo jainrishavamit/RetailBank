@@ -1,7 +1,7 @@
-package service;
+package com.tcs.ilp.service;
 
-import bean.UserBean;
-import dao.UserDaoImpl;
+import com.tcs.ilp.bean.UserBean;
+import com.tcs.ilp.dao.UserDaoImpl;
 
 public class UserService {
 	

@@ -1,13 +1,18 @@
-package dao;
+package com.tcs.ilp.dao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-import bean.UserBean;
-import util.DBConnection;
+import com.tcs.ilp.bean.UserBean;
+import com.tcs.ilp.util.DBConnection;
 
 public class UserDaoImpl implements UserDao{
 
 	@Override
+	
+	
+	
 	public UserBean findUserById(String l_username) {
 		
 		try {
