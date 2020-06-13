@@ -2,11 +2,52 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.HashMap,java.util.List,java.util.Arrays" %>
 <html lang="en">
+
+
+
+
+<%-- login status validation --%>
+<%
+	if(session.getAttribute("isLoggedIn")==null || !(session.getAttribute("isLoggedIn").equals("true"))){
+
+		session.setAttribute("login_msg", "Please login first to continue");
+		response.sendRedirect("login.jsp");
+	}
+
+	else if(session.getAttribute("loginUserRole")==null || !(session.getAttribute("loginUserRole").equals("customer_account_exe"))){
+	
+		session.setAttribute("redirect_msg", "You dont have rights to access previous page that you tried to access ");
+		response.sendRedirect("welcome.jsp");
+	}
+	
+	else if(session.getAttribute("redirect_msg")!=null){  %>
+	<script>alert("<%=session.getAttribute("redirect_msg")%>")</script>
+	<% 
+		session.removeAttribute("redirect_msg");  
+  }%>
+  
+	
+	
+
+
+	
+
+%>
+
+
+
+
+
   <head>
   <!-- you can include other files from here -->
   
    <script type="text/javascript" src="js/addUser.js"> </script>
    
+
+
+
+
+
 <%-- *****************  including header file ***************** --%>
 
 	<%@include file="header.jsp" %>

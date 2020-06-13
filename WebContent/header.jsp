@@ -80,7 +80,7 @@
               </ul>
             </li>
 			
-			 <li class="active"><a href="#">Logout</a></li>
+			 <li class="active"><a href="processLogout.jsp">Logout</a></li>
 			
           </ul>
         </div><!--/.nav-collapse -->
