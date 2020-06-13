@@ -17,8 +17,10 @@
                           </h2>
                     <button type="submit" class="buttonbox" value="Log in" style="margin-left: 50%" >Log in</button> 
                   
+                  
+                  <%-- displaying redirection reason here --%>
                   <% if(session.getAttribute("login_msg")!=null){  %>
-                	<script>alert("Incorrect user name or password")</script>
+                	<script>alert("<%=session.getAttribute("login_msg")%>")</script>
                 	<% 
                 		session.removeAttribute("login_msg");  
                   }%>
