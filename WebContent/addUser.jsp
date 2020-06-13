@@ -98,7 +98,7 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-4 col-xs-4 col-sm-4">State * </label>
 				<select class="col-md-8 col-xs-8 col-xs-8 control-group" name="state" id="state" onchange="submitToSelf()">
-				<option selected disabled>Select</option>
+				<option value=0 selected disabled>Select</option>
 				
 				<% 
 					String states[]=statesAndCities.keySet().toArray(new String[statesAndCities.keySet().size()]);
@@ -118,8 +118,8 @@
 				<div class="form-group">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-4 col-xs-4 col-sm-4">City* </label>
-				<select class="col-md-8 col-xs-8 col-xs-8 control-group">
-				<option selected disabled>Select</option>
+				<select class="col-md-8 col-xs-8 col-xs-8 control-group" name=city id=city>
+				<option value=0 selected disabled>Select</option>
 				<%
 				
 				if(request.getParameter("state")!=null){
@@ -127,7 +127,7 @@
 					Object []citiesArray=cities.toArray();
 					for(Object city:citiesArray){
 						String c=city.toString();
-						out.print("<option>"+c+"</option>");
+						out.print("<option value='"+c+"'>"+c+"</option>");
 					}
 				}else
 					out.println("<option disabled>Select state first</option>");
