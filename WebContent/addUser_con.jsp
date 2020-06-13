@@ -6,9 +6,9 @@
 
 
 
-<%-- login status validation --%>
+<%-- login status validation --%><%--
 <%
-	String roleAllowed="customer_account_executive";  // change to "cashier" for cashier specific pages
+	String roleAllowed="customer_account_exe";  // change to "cashier" for cashier specific pages
 
 	if(session.getAttribute("isLoggedIn")==null || !(session.getAttribute("isLoggedIn").equals("true"))){
 
@@ -28,7 +28,7 @@
 		session.removeAttribute("redirect_msg");  
   }%>
   
-	
+	--%>
 	
 
 
@@ -69,15 +69,8 @@
 	statesAndCities.put("Maharashtra", Arrays.asList("Dhule","Jalgaon","Pune"));
 	statesAndCities.put("Uttar Pradesh", Arrays.asList("Agra","Lucknow","Moradabad"));
 	
-	
-
 %>	
-	
-	
-	
-	
-	
-	
+
 		<form id="form1" action="AddCustomerServlet" method="post" onsubmit="return checkFields();">
 		
 			<div class="col-md-12 col-sm-12 col-xs-12">
@@ -103,7 +96,7 @@
 				<div class="form-group">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-4 col-xs-4 col-sm-4">Customer Name* </label>
-					<input type="text" class=" col-md-8 col-xs-8 col-sm-8 control-group" name="cusName" id="cusName" required aria-describedby="Name of customer"
+					<input type="text" class=" col-md-8 col-xs-8 col-sm-8 control-group" name="cusName" id="cusName" required onkeypress="return onlyChar(event);"  aria-describedby="Name of customer"
 					<%
 						if(request.getParameter("cusName")!=null){
 							out.print(" value='"+request.getParameter("cusName")+"'");
@@ -115,7 +108,7 @@
 				<div class="form-group">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-4 col-xs-4 col-sm-4">Age* </label>
-					<input type="number" class=" col-md-8 col-xs-8 col-sm-8 control-group" name="age" id="age" required aria-describedby="Enter age" min=1 max=125 
+					<input type="number" class=" col-md-8 col-xs-8 col-sm-8 control-group" name="age" id="age"  required aria-describedby="Enter age" min=1 max=125 
 					<%
 						if(request.getParameter("age")!=null){
 							out.print(" value='"+request.getParameter("age")+"'");
@@ -191,6 +184,7 @@
 				</div>
 				</div>
 				</div>
+				
 			</form>
 </div>
 

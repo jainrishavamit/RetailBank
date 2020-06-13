@@ -11,9 +11,9 @@
             <form action ="LoginController" method="post">
             
                     <h2 class="inputbox">UserId 
-                    <input  type="text" name ="Userid" placeholder="UserId" style="margin-left:4%">
+                    <input  type="text" name ="Userid" required  placeholder="UserId" style="margin-left:4%">
                          <br>   Password 
-                    <input  type="password" name ="Password" placeholder="Password"> <br>
+                    <input  type="password" name ="Password"  required  placeholder="Password"> <br>
                           </h2>
                     <button type="submit" class="buttonbox" value="Log in" style="margin-left: 50%" >Log in</button> 
                   

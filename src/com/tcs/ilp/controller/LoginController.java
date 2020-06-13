@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet{
 			session.setAttribute("loginUserRole",user.getL_role());
 			//out.print("Welcome to the world of servlets");
 			//out.print("user is : "+ user);
-			RequestDispatcher rd=getServletContext().getRequestDispatcher("/addUser.jsp");
+			RequestDispatcher rd=getServletContext().getRequestDispatcher("/welcome.jsp");
 			rd.forward(req, res);
 			
 		}else {
