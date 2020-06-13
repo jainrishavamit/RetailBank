@@ -8,13 +8,15 @@
 
 <%-- login status validation --%>
 <%
+	String roleAllowed="customer_account_exe";  // change to "cashier" for cashier specific pages
+
 	if(session.getAttribute("isLoggedIn")==null || !(session.getAttribute("isLoggedIn").equals("true"))){
 
 		session.setAttribute("login_msg", "Please login first to continue");
 		response.sendRedirect("login.jsp");
 	}
 
-	else if(session.getAttribute("loginUserRole")==null || !(session.getAttribute("loginUserRole").equals("customer_account_exe"))){
+	else if(session.getAttribute("loginUserRole")==null || !(session.getAttribute("loginUserRole").equals(roleAllowed))){
 	
 		session.setAttribute("redirect_msg", "You dont have rights to access previous page that you tried to access ");
 		response.sendRedirect("welcome.jsp");
