@@ -22,6 +22,9 @@
                   
                   
                </form>
+               <div>
+               <h2><center><p id="errorMsg" style="color:red"></p></center></h2>
+               </div>
                </div>
             </body>
 </html>
