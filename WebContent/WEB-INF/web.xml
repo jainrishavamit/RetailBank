@@ -21,6 +21,7 @@
 		<servlet-name>LC</servlet-name>
 		<url-pattern>/LoginController</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<description></description>
 		<servlet-name>AC</servlet-name>
@@ -29,5 +30,16 @@
 	<servlet-mapping>
 		<servlet-name>AC</servlet-name>
 		<url-pattern>/AddCustomerServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<description/>		
+		<servlet-name>SCC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.SearchCustomerController</servlet-class>
+	</servlet>	
+	<servlet-mapping>
+		<servlet-name>SCC</servlet-name>
+		<url-pattern>/SearchCustomerController</url-pattern>
 	</servlet-mapping>
 </web-app>

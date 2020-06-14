@@ -2,21 +2,30 @@
 <html>
     <head>
         <title>Sign In</title>
+        
+  		 <script type="text/javascript" src="js/login.js"> </script>
+   
         <link rel="stylesheet" href="Style.css">
             </head> 
             <body class="BackGround"> 
          <div>
             <h2 class="sign">User Login</h2>
             
-            <form action ="LoginController" method="post">
+            <form action ="LoginController" method="post" onsubmit="return checkFields();">
             
                     <h2 class="inputbox">UserId 
-                    <input  type="text" name ="Userid" required  placeholder="UserId" style="margin-left:4%">
+                    <input  type="text" name ="Userid" id="Userid" required  placeholder="UserId" style="margin-left:4%">
                          <br>   Password 
-                    <input  type="password" name ="Password"  required  placeholder="Password"> <br>
+                    <input  type="password" name ="Password" id="Password"  required  placeholder="Password"> <br>
                           </h2>
                     <button type="submit" class="buttonbox" value="Log in" style="margin-left: 50%" >Log in</button> 
                   
+                  
+               </form>
+               </div>
+            </body>
+</html>
+
                   
                   <%-- displaying redirection reason here --%>
                   <% if(session.getAttribute("login_msg")!=null){  %>
@@ -25,8 +34,3 @@
                 		session.removeAttribute("login_msg");  
                   }%>
                   
-                  
-               </form>
-               </div>
-            </body>
-</html>

@@ -11,6 +11,7 @@
 
 <div align="center">
 	<h1>Home Page</h1>
+	<h3>
 	login user role : <%=session.getAttribute("loginUserRole") %><br>
 	login status :  <%=
 			session.getAttribute("isLoggedIn") %>
@@ -20,16 +21,23 @@
 	<% 
 		session.removeAttribute("redirect_msg");  
   }%>
+  <br>
+  
+			 <a href="processLogout.jsp">Logout</a>
+  </h3>
 </div>
-<h4>Executive operations : operations</h4>
-<ol>
-<li><a href="addUser.jsp">User Story 2 : Add User(Customer)</a><br>
-</ol>
-<br>
-<h4>Cashier operations : operations</h4>
-<ol>
-<li><a href="searchAC.jsp">User Story 10 : Search Account</a><br>
-</ol>
+		<h4>Executive operations : operations</h4>
+			<ol>
+				<li><a href="addUser.jsp">User Story 2 : Add User(Customer)</a><br>
+				<li><a href="SearchCustomer.jsp">Search customer</a><br>
+			</ol>
+		
+		<br>
+		
+		<h4>Cashier operations : operations</h4>
+			<ol>
+				<li><a href="searchAC.jsp">User Story 10 : Search Account</a><br>
+			</ol>
 
 
 </body>

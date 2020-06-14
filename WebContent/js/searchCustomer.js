@@ -1,5 +1,5 @@
 function checkFields(){
-	if(document.getElementById("CustAccountId").value==""){
+	if(document.getElementById("CustSSNID").value==""){
 		if( document.getElementById("CustId").value==""){
 			alert("Both fields can not be empty");			
 			return false;
@@ -7,12 +7,12 @@ function checkFields(){
 				alert("Customer Id has to be of 9 digits");
 				return false;
 		}
-	}else if(document.getElementById("CustAccountId").value.length!=9){
+	}else if(document.getElementById("CustSSNID").value.length!=9){
 		if(document.getElementById("CustId").value==""){
-			alert("Account Id has to be of 9 digits");
+			alert("SSN Id has to be of 9 digits");
 			return false;
 		}else if(document.getElementById("CustId").value.length!=9){
-			alert("Either of the ID has to be of 9 digits");
+			alert("Either of the ID's has to be of 9 digits");
 			return false;
 		}
 	}
