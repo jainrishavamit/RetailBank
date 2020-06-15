@@ -5,7 +5,6 @@
 
 
 
-
 <%-- login status validation --%>
 <%
 	String roleAllowed="customer_account_executive";  // change to "cashier" for cashier specific pages
@@ -28,14 +27,6 @@
 		session.removeAttribute("redirect_msg");  
   }%>
   
-	
-	
-
-
-	
-
-%>
-  	
 	
 
 
@@ -125,91 +116,12 @@
 				</div>
 				</div>
 				<br/>
-				
-				
-	
-	
-	
-	
-	
-	<%
-	
-		//String foundStatus=(String)session.getAttribute("searchCustomerStatus");
-		if(session.getAttribute("searchCustomerStatus")!=null)
-		{  %>
-					
-					
-				<!-- <div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8"><h5>Customer found!</h5></label>
-				</div>
-				</div>	 -->
-					
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer SSN ID:<%  out.print(session.getAttribute("customer_ssn_id"));  %></label>
-				</div>
-				</div>
-				
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer ID:<%  out.print(session.getAttribute("customer_id"));  %></label>
-				</div>
-				</div>
-				
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer Name:<%  out.print(session.getAttribute("customer_name"));  %> </label>
-				</div>
-				</div>
-				
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer Age:<%  out.print(session.getAttribute("customer_age"));  %> </label>
-				</div>
-				</div>
-				
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer Address:<%  out.print(session.getAttribute("customer_address"));  %> </label>
-				</div>
-				</div>
-				
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer State:<%  out.print(session.getAttribute("customer_state"));  %> </label>
-				</div>
-				</div>
-				
-				<div class="form-group">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<label  class="col-md-8 col-xs-8 col-sm-8">Customer City:<%  out.print(session.getAttribute("customer_city"));  %> </label>
-				</div>
-				</div>
-					
-					
-					<%-- Customer SSN ID:<%  out.print(session.getAttribute("customer_ssn_id"));  %> <br/>
-					Customer ID:<%  out.print(session.getAttribute("customer_id"));  %><br/>
-					Customer Name:<%  out.print(session.getAttribute("customer_name"));  %> <br/>
-					Customer Age:<%  out.print(session.getAttribute("customer_age"));  %> <br/>
-					Customer Address:<%  out.print(session.getAttribute("customer_address"));  %> <br/>
-					Customer State:<%  out.print(session.getAttribute("customer_state"));  %> <br/>
-					Customer City:<%  out.print(session.getAttribute("customer_city"));  %> <br/>
-					 --%>
-					<%            	
-                	 
-                		  
-                  }
-                  else if(session.getAttribute("searchCustomerNotFound")!=null)
+		
+	<% if(session.getAttribute("searchCustomerNotFound")!=null)
                   { 
-                  
-                  
+
                   	%><script>alert("No Customer exists with the specified ID/SSN ID!")</script><%
-                  	
-                  	session.removeAttribute("searchCustomerNotFound");
-                  
-                  
-                 
+
                   }
                   session.removeAttribute("searchCustomerStatus");
                   session.removeAttribute("customer_ssn_id");
@@ -219,15 +131,16 @@
                   session.removeAttribute("customer_address");
                   session.removeAttribute("customer_state");
                   session.removeAttribute("customer_city");
+                  session.removeAttribute("searchCustomerNotFound");
                   
                   %>
-			
+	
+	
+	
+	
+	
+	
 		
-		
-			
-		</form>
-</div>
-
 	<!-- ***************including footer **********************-->
 	<%@include file="footer.jsp" %>
    </div>

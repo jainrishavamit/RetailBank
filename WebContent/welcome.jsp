@@ -26,10 +26,22 @@
 			 <a href="processLogout.jsp">Logout</a>
   </h3>
 </div>
+	<h4>for both</h4>
+
+				<ol>
+				
+					<li><a href="processLogout.jsp">User Story 1 : login(this will log you out)</a><br>
+				</ol>
+				<br>
+				
 		<h4>Executive operations : operations</h4>
 			<ol>
-				<li><a href="addUser.jsp">User Story 2 : Add User(Customer)</a><br>
-				<li><a href="SearchCustomer.jsp">Search customer</a><br>
+				
+				<li><a href="addUser.jsp">User Story 1 : login(this will log you out)</a><br>
+				<li><a href="addUser.jsp">User Story 2 : Add Customer</a><br>
+				<li><a href="UpdateCustomer.jsp">User Story 3 : Update Customer</a><br>
+				<li><a href="DeleteCustomer.jsp">User Story 4 : Delete Customer</a><br>
+				<li><a href="SearchCustomer.jsp">User Story 9 : Search customer</a><br>
 			</ol>
 		
 		<br>

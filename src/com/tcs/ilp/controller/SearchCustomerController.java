@@ -1,11 +1,11 @@
 package com.tcs.ilp.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +18,11 @@ import com.tcs.ilp.service.CustomerService;
 
 //@WebServlet("/SearchCustomerController")
 public class SearchCustomerController extends HttpServlet {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 //	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,7 +30,7 @@ public class SearchCustomerController extends HttpServlet {
 		int id;
 		CustomerBean fetchedCustomer=new CustomerBean();
 		CustomerService cusService=new CustomerService();
-		PrintWriter out=response.getWriter();
+//		PrintWriter out=response.getWriter();
 		
 		HttpSession session=request.getSession();	
 //		session.setAttribute("searchCustomerStatus", "");
@@ -56,8 +61,8 @@ public class SearchCustomerController extends HttpServlet {
 			session.setAttribute("customer_state", fetchedCustomer.getCustomer_state());
 			session.setAttribute("customer_city", fetchedCustomer.getCustomer_city());
 			
-			RequestDispatcher rd=getServletContext().getRequestDispatcher("/SearchCustomer.jsp");
-			out=response.getWriter();
+			RequestDispatcher rd=getServletContext().getRequestDispatcher("/accDetails.jsp");
+//			out=response.getWriter();
 			rd.forward(request, response);
 
 		}

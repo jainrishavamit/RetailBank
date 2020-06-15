@@ -26,15 +26,10 @@
 	<script>alert("<%=session.getAttribute("redirect_msg")%>")</script>
 	<% 
 		session.removeAttribute("redirect_msg");  
-  }%>
+  }
   
-	
-	
-
-
-	
-
-%>
+ %>
+  
 
 
 
@@ -103,7 +98,7 @@
 				<div class="form-group">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-4 col-xs-4 col-sm-4">Customer Name* </label>
-					<input type="text" class=" col-md-8 col-xs-8 col-sm-8 control-group" name="cusName" id="cusName" required aria-describedby="Name of customer"
+					<input type="text" class=" col-md-8 col-xs-8 col-sm-8 control-group" name="cusName" id="cusName" required aria-describedby="Name of customer"  onkeypress="return onlyChars(event);" 
 					<%
 						if(request.getParameter("cusName")!=null){
 							out.print(" value='"+request.getParameter("cusName")+"'");

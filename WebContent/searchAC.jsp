@@ -29,14 +29,14 @@
   
 
 
-%>
+  
 
 
   <head>
   <!-- you can include other files from here -->
   
    <script type="text/javascript" src="js/searchAC.js"> </script>
-   
+
 
 
 
@@ -57,7 +57,7 @@
 	
 	
 	
-		<form id="form1" action="dummySubmit.jsp" method="post" onsubmit="return checkFields();">
+		<form id="form1" action="SearchExistServlet" method="post" onsubmit="return checkFields();">
 	
 				
 	<label class="warning">(*)Either one of the detail should be entered</label>
@@ -99,7 +99,23 @@
 				</div>
 				</div>
 				
-				
+				<% if(session.getAttribute("searchCustomerNotFound")!=null)
+                  { 
+
+                  	%><script>alert("No Customer exists with the specified ACC/Cust ID!")</script><%
+
+                  }
+                  session.removeAttribute("searchCustomerStatus");
+                  session.removeAttribute("customer_ssn_id");
+                  session.removeAttribute("customer_id");
+                  session.removeAttribute("customer_name");
+                  session.removeAttribute("customer_age");
+                  session.removeAttribute("customer_address");
+                  session.removeAttribute("customer_state");
+                  session.removeAttribute("customer_city");
+                  
+                  %>
+	
 				
 	
 		</form>

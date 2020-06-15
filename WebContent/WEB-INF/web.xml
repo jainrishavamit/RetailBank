@@ -42,4 +42,40 @@
 		<servlet-name>SCC</servlet-name>
 		<url-pattern>/SearchCustomerController</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<description></description>
+		<servlet-name>SE</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.SearchExistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SE</servlet-name>
+		<url-pattern>/SearchExistServlet</url-pattern>
+	</servlet-mapping>
+	
+		
+	
+	 <servlet>
+		<description></description>
+		<servlet-name>UCC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.UpdateCustomerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UCC</servlet-name>
+		<url-pattern>/UpdateCustomerController</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<description></description>
+		<servlet-name>DCC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.DeleteCustomerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DCC</servlet-name>
+		<url-pattern>/DeleteCustomerController</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
