@@ -41,6 +41,7 @@
 				<li><a href="UpdateCustomer.jsp">User Story 3 : Update Customer</a><br>
 				<li><a href="DeleteCustomer.jsp">User Story 4 : Delete Customer</a><br>
 				<li><a href="ViewCustomerStatusController">User Story 5 : View all customer status</a>
+				<li><a href="ViewAccountStatusController">User Story 8 : View all Account status</a>
 				<li><a href="SearchCustomer.jsp">User Story 9 : Search customer</a><br>
 				
 	
@@ -51,6 +52,7 @@
 		<h4>Cashier operations : operations</h4>
 			<ol>
 				<li><a href="searchAC.jsp">User Story 10 : Search Account</a><br>
+				
 			</ol>
 
 </body>

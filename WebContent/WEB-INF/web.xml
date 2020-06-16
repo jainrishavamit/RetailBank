@@ -92,6 +92,16 @@
 		<url-pattern>/SearchExistServlet</url-pattern>
 	</servlet-mapping>
 
+	
+	<servlet>
+		<description></description>
+		<servlet-name>VASC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.ViewAccountStatusController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VASC</servlet-name>
+		<url-pattern>/ViewAccountStatusController</url-pattern>
+	</servlet-mapping>
 
 
 
