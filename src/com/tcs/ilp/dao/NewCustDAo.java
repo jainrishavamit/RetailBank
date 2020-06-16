@@ -28,13 +28,14 @@ public class NewCustDAo {
 						return false;
 					}
 				ps1.close();
-				ps = conn.prepareStatement("insert into customer_info(CI_Cus_SSN_ID,CI_Cus_Name,CI_Cus_Age,CI_Cus_Address,CI_Cus_State,CI_Cus_City) values (?,?,?,?,?,?)");
+				ps = conn.prepareStatement("insert into customer_info(CI_Cus_SSN_ID,CI_Cus_Name,CI_Cus_Age,CI_Cus_Address,CI_Cus_State,CI_Cus_City,ci_message) values (?,?,?,?,?,?,?)");
 				ps.setLong(1, newCust.getCustomerSSNId());
 				ps.setString(2, newCust.getCusomerName());
 				ps.setInt(3, newCust.getAge());
 				ps.setString(4, newCust.getAddress());
 				ps.setString(5, newCust.getState());
 				ps.setString(6, newCust.getCity());
+				ps.setString(7, "Customer created successfully");
 				
 				ps.execute();
 				
@@ -47,6 +48,8 @@ public class NewCustDAo {
 					ps.close();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}catch(NullPointerException e) {
 					e.printStackTrace();
 				}
 			}

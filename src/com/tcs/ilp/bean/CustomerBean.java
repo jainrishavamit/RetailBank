@@ -2,7 +2,12 @@
  * 
  */
 package com.tcs.ilp.bean;
-
+		
+//import java.security.Timestamp;
+import java.util.Date;
+import java.time.LocalDateTime;
+//import java.sql.Timestamp;
+	  					
 /**
  * @author SUNIDHI HARRISON
  *
@@ -17,11 +22,34 @@ public class CustomerBean {
 	private String customer_city;
 	private String customer_state;
 	
+	private int customer_is_active;
+	private String customer_message;
+	private Date date_of_cus_creation;
+	private Date last_updated;
+								 
+								   
+						   
 	
-	public CustomerBean() {
-		
+	public CustomerBean() {						 
+								 
+	}
+ 
+	public CustomerBean(int customer_ssn_id,int customer_id,String customer_name,int customer_age,String customer_address,String customer_state,String customer_city,int customer_is_active,String customer_message,Date date_of_cus_creation,Date last_updated)
+	{
+		this.customer_ssn_id=customer_ssn_id;
+		this.customer_id=customer_id;
+		this.customer_name=customer_name;
+		this.customer_age=customer_age;
+		this.customer_address=customer_address;
+		this.customer_state=customer_state;
+		this.customer_city=customer_city;
+		this.customer_is_active=customer_is_active;
+		this.customer_message=customer_message;
+		this.date_of_cus_creation=date_of_cus_creation;
+		this.last_updated=last_updated;
 	}
 	
+ 
 	public CustomerBean(int customer_ssn_id,int customer_id,String customer_name,int customer_age,String customer_address,String customer_state,String customer_city)
 	{
 		this.customer_ssn_id=customer_ssn_id;
@@ -31,6 +59,10 @@ public class CustomerBean {
 		this.customer_address=customer_address;
 		this.customer_state=customer_state;
 		this.customer_city=customer_city;
+											   
+										   
+												   
+								   
 	}
 	
 	
@@ -106,6 +138,45 @@ public class CustomerBean {
 	
 	
 	/**
+		
+
+	/**
+	 * @return the customer_is_active
+	 */
+	public int getCustomer_is_active()
+	{
+		return customer_is_active;
+	}
+	
+	
+	
+	/**
+	 * @return the customer_message
+	 */
+	public String getCustomer_message()
+	{
+		return customer_message;
+	}
+	
+	
+	/**
+	 * @return the date_of_cus_creation
+	 */
+	public Date getDate_of_cus_creation()
+	{
+		return date_of_cus_creation;
+	}
+	
+	
+	/**
+	 * @return the last_updated
+	 */
+	public Date getLast_updated()
+	{
+		return last_updated;
+	}
+	
+	/**			
 	 * @param customer_ssn_id the customer_ssn_id to set
 	 */
 	public void setCustomer_ssn_id(int customer_ssn_id) {
@@ -175,8 +246,38 @@ public class CustomerBean {
 		this.customer_state = customer_state;
 	}
 	
+ 
+	/**
+	 * @param customer_is_active the customer_is_active to set
+	 */
+	public void setCustomer_is_active(int customer_is_active) {
+		this.customer_is_active = customer_is_active;
+	}
+
+	
+	/**
+	 * @param customer_message the customer_message to set
+	 */
+	public void setCustomer_message(String customer_message) {
+		this.customer_message = customer_message;
+	}
+	
+	/**
+	 * @param date_of_cus_creation the date_of_cus_creation to set
+	 */
+	public void setDate_of_cus_creation(Date date_of_cus_creation) {
+		this.date_of_cus_creation = date_of_cus_creation;
+	}
 	
 	
+	/**
+	 * @param last_updated the last_updated to set
+	 */
+	public void setLast_updated(Date last_updated) {
+		this.last_updated = last_updated;
+	}
+	
+
 	@Override
 	public String toString() {
 		return "CustomerBean [customer_ssn_id=" + customer_ssn_id + ", customer_id=" + customer_id + ", customer_name=" + customer_name + ", customer_age="

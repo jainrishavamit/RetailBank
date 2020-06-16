@@ -77,5 +77,15 @@
 		<url-pattern>/DeleteCustomerController</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<description></description>
+		<servlet-name>UCSC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.ViewCustomerStatusController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UCSC</servlet-name>
+		<url-pattern>/ViewCustomerStatusController</url-pattern>
+	</servlet-mapping>
+	 
 	
 </web-app>

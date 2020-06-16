@@ -45,7 +45,7 @@ public class DeleteCustomerController extends HttpServlet {
 			int search_value=Integer.parseInt(request.getParameter("searchValue"));
 			session.setAttribute("search_value", search_value);
 		
-			fetchedCustomer=cusService.searchCustomer(search_value, search_criteria);
+			fetchedCustomer=cusService.searchCustomer(search_value, search_criteria,false);
 		
 			if(fetchedCustomer!=null)
 			{
@@ -86,11 +86,20 @@ public class DeleteCustomerController extends HttpServlet {
 		{
 		
 			
+			CustomerBean cus=new CustomerBean();
+			int cus_id=Integer.parseInt(request.getParameter("Customer_ID"));
+			cus.setCustomer_id(cus_id);
+			if(cusService.hasActiveAccounts(cus)) {
+
+				session.setAttribute("customer_deleted", "hasActiveAccount");
+				RequestDispatcher rd=getServletContext().getRequestDispatcher("/DeleteCustomer.jsp");
+				rd.forward(request, response);
+			}
+			
 //			if(request.getParameter("Customer_SSN_ID")!="" || request.getParameter("Customer_SSN_ID")!=null)
 //			{
 			
 //				int ssn_id=Integer.parseInt(request.getParameter("Customer_SSN_ID"));
-				int cus_id=Integer.parseInt(request.getParameter("Customer_ID"));
 //				String name=request.getParameter("Customer_Name");
 //				int age=Integer.parseInt(request.getParameter("Age"));
 //				String address=request.getParameter("Address");
@@ -98,28 +107,28 @@ public class DeleteCustomerController extends HttpServlet {
 //				String city=request.getParameter("City");
 			
 //				CustomerBean cus_obj=new CustomerBean(ssn_id,cus_id,new_name,new_age_of_cus,new_address,state,city);
-				boolean customerDeletedStatus=cusService.deleteCustomer(cus_id,"CI_Customer_ID");
 				
-				if(customerDeletedStatus)
-				{
-					//customer deleted successfully
-					
-					session.setAttribute("customer_deleted", "deleted");
-					//session.setAttribute("customer_not_updated", null);
-					RequestDispatcher rd=getServletContext().getRequestDispatcher("/DeleteCustomer.jsp");
-					out=response.getWriter();
-					rd.forward(request, response);
-				}
-				else
-				{
-					//failed to delete customer
-					
-					session.setAttribute("customer_deleted", "notDeleted");
-					//session.setAttribute("customer_not_updated", "not updated");
-					RequestDispatcher rd=getServletContext().getRequestDispatcher("/DeleteCustomer.jsp");
-					rd.forward(request, response);
-				}
-				
+					else{
+						boolean customerDeletedStatus=cusService.deleteCustomer(cus_id,"CI_Customer_ID");
+						if(customerDeletedStatus) {
+							//customer deleted successfully
+							
+							session.setAttribute("customer_deleted", "deleted");
+							//session.setAttribute("customer_not_updated", null);
+							RequestDispatcher rd=getServletContext().getRequestDispatcher("/DeleteCustomer.jsp");
+							out=response.getWriter();
+							rd.forward(request, response);
+						}
+						else
+						{
+							//failed to delete customer
+							
+							session.setAttribute("customer_deleted", "notDeleted");
+							//session.setAttribute("customer_not_updated", "not updated");
+							RequestDispatcher rd=getServletContext().getRequestDispatcher("/DeleteCustomer.jsp");
+							rd.forward(request, response);
+						}
+					}
 //			}
 //			else
 //			{

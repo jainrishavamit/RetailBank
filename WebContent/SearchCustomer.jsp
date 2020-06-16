@@ -27,16 +27,8 @@
 		session.removeAttribute("redirect_msg");  
   }%>
   
-	
-
-
-	
 
 <!-- %> -->
-
-
-
-
 
   <head>
   <!-- you can include other files from here -->

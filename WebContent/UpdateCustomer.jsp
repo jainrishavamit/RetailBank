@@ -211,7 +211,7 @@
 		}
 		else if(session.getAttribute("searchCustomerStatus")!=null && session.getAttribute("searchCustomerStatus").equals("notFound"))
 		{
-			%><script>alert("Customer Not found!")</script><%
+			%><script>alert("Either customer is not found or customer is inactive!")</script><%
 			
 		}
 		

@@ -122,6 +122,12 @@
 					<input type="text" class=" col-md-6 col-xs-6 col-sm-6 control-group" readonly value="<%  out.print(session.getAttribute("customer_city"));%>">
 				</div>
 				</div>
+				<div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<label  class="col-md-6 col-xs-6 col-sm-6">Activation status:  </label>
+					<input type="text" class=" col-md-6 col-xs-6 col-sm-6 control-group" readonly value="<%  out.print(session.getAttribute("customer_isActive").equals("1")?"ACTIVE":"INACTIVE");%>">
+				</div>
+				</div>
 				</div>
 				</div>
 					</form>
@@ -155,6 +161,9 @@
                   session.removeAttribute("customer_address");
                   session.removeAttribute("customer_state");
                   session.removeAttribute("customer_city");
+                  session.removeAttribute("customer_isActive");
+                  
+                  
                   
                   %>
 			

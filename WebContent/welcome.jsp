@@ -37,11 +37,13 @@
 		<h4>Executive operations : operations</h4>
 			<ol>
 				
-				<li><a href="addUser.jsp">User Story 1 : login(this will log you out)</a><br>
 				<li><a href="addUser.jsp">User Story 2 : Add Customer</a><br>
 				<li><a href="UpdateCustomer.jsp">User Story 3 : Update Customer</a><br>
 				<li><a href="DeleteCustomer.jsp">User Story 4 : Delete Customer</a><br>
+				<li><a href="ViewCustomerStatusController">User Story 5 : View all customer status</a>
 				<li><a href="SearchCustomer.jsp">User Story 9 : Search customer</a><br>
+				
+	
 			</ol>
 		
 		<br>
@@ -50,7 +52,6 @@
 			<ol>
 				<li><a href="searchAC.jsp">User Story 10 : Search Account</a><br>
 			</ol>
-
 
 </body>
 </html>

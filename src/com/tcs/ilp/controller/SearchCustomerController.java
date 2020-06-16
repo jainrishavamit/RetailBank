@@ -38,12 +38,12 @@ public class SearchCustomerController extends HttpServlet {
 		if(!(request.getParameter("Customer_SSN_ID").equals("") || request.getParameter("Customer_SSN_ID")==null ))
 		{
 			id=Integer.parseInt(request.getParameter("Customer_SSN_ID"));
-			fetchedCustomer=cusService.searchCustomer(id,"CI_Cus_SSN_ID");
+			fetchedCustomer=cusService.searchCustomer(id,"CI_Cus_SSN_ID",true);
 		}
 		else if(!(request.getParameter("Customer_ID").equals("") || request.getParameter("Customer_ID")==null ))
 		{
 			id=Integer.parseInt(request.getParameter("Customer_ID"));
-			fetchedCustomer=cusService.searchCustomer(id,"CI_Customer_ID");
+			fetchedCustomer=cusService.searchCustomer(id,"CI_Customer_ID",true);
 		}
 		
 		
@@ -60,6 +60,7 @@ public class SearchCustomerController extends HttpServlet {
 			session.setAttribute("customer_address", fetchedCustomer.getCustomer_address());
 			session.setAttribute("customer_state", fetchedCustomer.getCustomer_state());
 			session.setAttribute("customer_city", fetchedCustomer.getCustomer_city());
+			session.setAttribute("customer_isActive", fetchedCustomer.getCustomer_is_active());
 			
 			RequestDispatcher rd=getServletContext().getRequestDispatcher("/accDetails.jsp");
 //			out=response.getWriter();

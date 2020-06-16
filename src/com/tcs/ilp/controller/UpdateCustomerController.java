@@ -39,7 +39,7 @@ public class UpdateCustomerController extends HttpServlet {
 			int search_value=Integer.parseInt(request.getParameter("searchValue"));
 			session.setAttribute("search_value", search_value);
 		
-			fetchedCustomer=cusService.searchCustomer(search_value, search_criteria);
+			fetchedCustomer=cusService.searchCustomer(search_value, search_criteria,false);
 		
 			if(fetchedCustomer!=null)
 			{

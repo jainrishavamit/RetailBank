@@ -209,7 +209,7 @@
 		}
 		else if(session.getAttribute("searchCustomerStatus")!=null && session.getAttribute("searchCustomerStatus").equals("notFound"))
 		{
-			%><script>alert("Customer Not found!")</script><%
+			%><script>alert("Either customer is not found or customer is inactive")</script><%
 			
 		}
 		
@@ -227,6 +227,12 @@
 	else if(session.getAttribute("customer_deleted")!=null && session.getAttribute("customer_deleted").equals("notDeleted"))
 	{
 		%><script>alert("Failed to delete the Customer!")</script><%
+		session.removeAttribute("customer_deleted");
+	}
+
+	else if(session.getAttribute("customer_deleted")!=null && session.getAttribute("customer_deleted").equals("hasActiveAccount"))
+	{
+		%><script>alert("Customer has active accounts.\nKindly delete accounts to delete customer!")</script><%
 		session.removeAttribute("customer_deleted");
 	}
 	
