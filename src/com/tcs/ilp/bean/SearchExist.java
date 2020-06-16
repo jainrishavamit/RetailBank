@@ -1,53 +1,91 @@
 package com.tcs.ilp.bean;
 
 public class SearchExist {
-	private int customer_age;
-	private String customer_address;
-	private String customer_city;
-	private String customer_state;
+	
 	private long CustId;
 	private long AccId;
-	private Long customer_ssn_id;
-	private String customer_name;
+
+	private long balanceS;
+	private long balanceC;
+	private String dateCreationS;
+	private String dateCreationC;
+	private String statusS;
+	private String statusC;
+	private String dateUpdateS;
+	private String dateUpdateC;
+	private long AccIdC;
+	private long AccIdS;
 	
-	public long getCustomer_ssn_id() {
-		return customer_ssn_id;
-	}
-	public void setCustomer_ssn_id(long customer_ssn_id) {
-		this.customer_ssn_id = customer_ssn_id;
-	}
-	public String getCustomer_name() {
-		return customer_name;
-	}
-	public void setCustomer_name(String customer_name) {
-		this.customer_name = customer_name;
-	}
-	public int getCustomer_age() {
-		return customer_age;
-	}
-	public void setCustomer_age(int customer_age) {
-		this.customer_age = customer_age;
-	}
-	public String getCustomer_address() {
-		return customer_address;
-	}
-	public void setCustomer_address(String customer_address) {
-		this.customer_address = customer_address;
-	}
-	public String getCustomer_city() {
-		return customer_city;
-	}
-	public void setCustomer_city(String customer_city) {
-		this.customer_city = customer_city;
-	}
-	public String getCustomer_state() {
-		return customer_state;
-	}
-	public void setCustomer_state(String customer_state) {
-		this.customer_state = customer_state;
-	}
+	private int cust=0;
 	
 	
+	public int getCust() {
+		return cust;
+	}
+	public void setCust(int cust) {
+		this.cust = cust;
+	}
+	public long getAccIdC() {
+		return AccIdC;
+	}
+	public void setAccIdC(long accIdC) {
+		AccIdC = accIdC;
+	}
+	public long getAccIdS() {
+		return AccIdS;
+	}
+	public void setAccIdS(long accIdS) {
+		AccIdS = accIdS;
+	}
+	public String getDateUpdateS() {
+		return dateUpdateS;
+	}
+	public void setDateUpdateS(String dateUpdateS) {
+		this.dateUpdateS = dateUpdateS;
+	}
+	public String getDateUpdateC() {
+		return dateUpdateC;
+	}
+	public void setDateUpdateC(String dateUpdateC) {
+		this.dateUpdateC = dateUpdateC;
+	}
+	
+	public long getBalanceS() {
+		return balanceS;
+	}
+	public void setBalanceS(long balanceS) {
+		this.balanceS = balanceS;
+	}
+	public long getBalanceC() {
+		return balanceC;
+	}
+	public void setBalanceC(long balanceC) {
+		this.balanceC = balanceC;
+	}
+	public String getDateCreationS() {
+		return dateCreationS;
+	}
+	public void setDateCreationS(String dateCreationS) {
+		this.dateCreationS = dateCreationS;
+	}
+	public String getDateCreationC() {
+		return dateCreationC;
+	}
+	public void setDateCreationC(String dateCreationC) {
+		this.dateCreationC = dateCreationC;
+	}
+	public String getStatusS() {
+		return statusS;
+	}
+	public void setStatusS(String statusS) {
+		this.statusS = statusS;
+	}
+	public String getStatusC() {
+		return statusC;
+	}
+	public void setStatusC(String statusC) {
+		this.statusC = statusC;
+	}
 	public long getCustId() {
 		return CustId;
 	}

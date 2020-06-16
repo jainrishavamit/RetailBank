@@ -7,22 +7,6 @@
 			left: 23%;
 			top: 73%;
 		   }
-		   
-	 .warningnew{ 
-				color:red;
-				color: red;
-				position: absolute;
-				left: 40%;
-				top: 25%;
-		   }
-		   
-   .warningnewsearch{ 
-				color:red;
-				color: red;
-				position: absolute;
-				left: 45%;
-				top: 42%;
-		   }
 	
    .container{ 
 			  width:100%
@@ -52,14 +36,6 @@
 				top: -66px;
 				right: 125px;
 			 }
-			 
-	.loginheadingnew{    
-				font-size: 25px;
-				position: absolute;
-				top: -40px;
-				right: 125px;
-			 }
-			 
 			 
    .form-group{
 				display: block;
@@ -97,10 +73,10 @@
    
    .boxcontainer{ 
 				   width: 100%;
-				   margin: 11% 0% 0% 25%;
+				   margin: 11% 0% 0% 19%;
 				}
    form{
-		padding-top: 40px;
+		padding-top: 10px;
 		font-size: 14px;
 		margin-top: 30px;
 		width:50%;

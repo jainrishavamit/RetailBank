@@ -21,3 +21,26 @@ function checkFields(){
 	//alert("everything fine");
 	return true;
 }
+
+
+function checkAccIdC(){
+	if(document.getElementById("toAccIdC").value.length!=9){
+		alert("Account Id has to be of 9 digits");
+		document.getElementById("toAccIdC").focus();
+		return false;
+	}
+	return true;
+	
+	//return false;
+}
+
+function checkAccIdS(){
+	if(document.getElementById("toAccIdS").value.length!=9){
+		alert("Account Id has to be of 9 digits");
+		document.getElementById("toAccIdS").focus();
+		return false;
+	}
+	return true;
+	
+	//return false;
+}

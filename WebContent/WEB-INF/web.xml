@@ -31,30 +31,20 @@
 		<servlet-name>AC</servlet-name>
 		<url-pattern>/AddCustomerServlet</url-pattern>
 	</servlet-mapping>
-
-
-	<servlet>
-		<description/>		
-		<servlet-name>SCC</servlet-name>
-		<servlet-class>com.tcs.ilp.controller.SearchCustomerController</servlet-class>
-	</servlet>	
-	<servlet-mapping>
-		<servlet-name>SCC</servlet-name>
-		<url-pattern>/SearchCustomerController</url-pattern>
-	</servlet-mapping>
 	
 	
 	<servlet>
 		<description></description>
-		<servlet-name>SE</servlet-name>
-		<servlet-class>com.tcs.ilp.controller.SearchExistServlet</servlet-class>
+		<servlet-name>DM</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.DepositServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>SE</servlet-name>
-		<url-pattern>/SearchExistServlet</url-pattern>
+		<servlet-name>DM</servlet-name>
+		<url-pattern>/DepositServlet</url-pattern>
 	</servlet-mapping>
 	
-		
+	
+	
 	
 	 <servlet>
 		<description></description>
@@ -77,6 +67,8 @@
 		<url-pattern>/DeleteCustomerController</url-pattern>
 	</servlet-mapping>
 	
+
+
 	<servlet>
 		<description></description>
 		<servlet-name>UCSC</servlet-name>
@@ -87,5 +79,31 @@
 		<url-pattern>/ViewCustomerStatusController</url-pattern>
 	</servlet-mapping>
 	 
+
+
+
+ 	<servlet>
+		<description></description>
+		<servlet-name>SE</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.SearchExistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SE</servlet-name>
+		<url-pattern>/SearchExistServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<description></description>
+		<servlet-name>SCC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.SearchCustomerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SCC</servlet-name>
+		<url-pattern>/SearchCustomerController</url-pattern>
+	</servlet-mapping>
+
 	
 </web-app>

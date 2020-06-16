@@ -2,6 +2,7 @@ package com.tcs.ilp.controller;
 
 import java.io.IOException;
 //import java.io.PrintWriter;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 //import javax.servlet.RequestDispatcher;
@@ -43,25 +44,53 @@ public class SearchExistServlet extends HttpServlet {
 
 		if(serve.findId(search))
 		{
-				session.setAttribute("searchCustomerStatus", "found");
-				session.setAttribute("searchCustomerNotFound", null);
-				session.setAttribute("customer_ssn_id", search.getCustomer_ssn_id());
-				session.setAttribute("customer_id", search.getCustId());
-				session.setAttribute("customer_name", search.getCustomer_name());
-				session.setAttribute("customer_age", search.getCustomer_age());
-				session.setAttribute("customer_address", search.getCustomer_address());
-				session.setAttribute("customer_state", search.getCustomer_state());
-				session.setAttribute("customer_city", search.getCustomer_city());
-				
+			session.setAttribute("customer_cid", search.getCustId());
+				if(search.getAccIdC()>0)
+				{
+					session.setAttribute("searchCustomerStatus", "found");
+					session.setAttribute("searchCustomerNotFound", null);
+					session.setAttribute("customer_acc_idC", search.getAccIdC());
+					session.setAttribute("customer_balanceC", search.getBalanceC());
+					session.setAttribute("customer_date_createC", search.getDateCreationC());
+					session.setAttribute("customer_date_updateC", search.getDateUpdateC());
+					session.setAttribute("customer_stateC", search.getStatusC());					
+				}
+				if(search.getAccIdS()>0)
+				{
+					session.setAttribute("searchCustomerStatus", "found");
+					session.setAttribute("searchCustomerNotFound", null);
+					session.setAttribute("customer_acc_idS", search.getAccIdS());
+					session.setAttribute("customer_balanceS", search.getBalanceS());
+					session.setAttribute("customer_date_createS", search.getDateCreationS());
+					session.setAttribute("customer_date_updateC", search.getDateUpdateS());
+					session.setAttribute("customer_stateS", search.getStatusS());
+				}
+				if(!(search.getAccIdS()>0) && !(search.getAccIdC()>0))
+				{PrintWriter out = response.getWriter();
+					out.println("<script type=\"text/javascript\">");
+					out.println("alert('Failed: error occured');");
+					out.println("location='searchAC.jsp';");
+					out.println("</script>");
+				}
 				RequestDispatcher rd=getServletContext().getRequestDispatcher("/searchACC.jsp");
 				rd.forward(request, response);
 		}
 		else
 		{
 			RequestDispatcher rd=getServletContext().getRequestDispatcher("/searchAC.jsp");
-			session.setAttribute("searchCustomerStatus", null);
-			session.setAttribute("searchCustomerNotFound", "not found");
-			rd.forward(request, response);
+			
+			if(search.getCust()==1)
+			{
+				
+				session.setAttribute("searchCustomerFound", "found");
+				rd.forward(request, response);
+			}
+			else {
+				session.setAttribute("searchCustomerStatus", null);
+				session.setAttribute("searchCustomerNotFound", "not found");
+				rd.forward(request, response);
+				}
+			
 		}
 	}
 }
