@@ -21,7 +21,7 @@ public class DepoDAO {
 				ps.setLong(2, depo.getAccId());
 				ps.execute();
 				ps.close();
-				ps1 = con.prepareStatement("INSERT INTO `transactions` (`T_Cus_ID`,`T_Amount`,`T_Description`) VALUES (?,?,'deposit')");
+				ps1 = con.prepareStatement("INSERT INTO `transactions` (`T_ACC_ID`,`T_Amount`,`T_Description`) VALUES (?,?,'deposit')");
 				ps1.setLong(1,depo.getCustId());
 				ps1.setLong(2,depo.getAmount());
 				ps1.execute();
@@ -44,7 +44,7 @@ public class DepoDAO {
 				ps.setLong(2, depo.getAccId());
 				ps.execute();
 				ps.close();
-				ps1 = con.prepareStatement("INSERT INTO `transactions` (`T_Cus_ID`,`T_Amount`,`T_Description`) VALUES (?,?,'withdraw')");
+				ps1 = con.prepareStatement("INSERT INTO `transactions` (`T_ACC_ID`,`T_Amount`,`T_Description`) VALUES (?,?,'withdraw')");
 				ps1.setLong(1,depo.getAccId());
 				ps1.setLong(2,depo.getAmount());
 				ps1.execute();
@@ -85,7 +85,7 @@ public class DepoDAO {
 						ps2.setLong(2,depo.getDesAccId());
 						ps2.execute();
 						ps2.close();
-						ps3 = con.prepareStatement("INSERT INTO `transactions`(`T_Cus_ID`,`T_Source_Acc_Type`,`T_Target_Acc_Type`,`T_Amount`,`T_Description`) VALUES (?,?,?,?,?)");
+						ps3 = con.prepareStatement("INSERT INTO `transactions`(`T_ACC_ID`,`T_Source_Acc_Type`,`T_Target_Acc_Type`,`T_Amount`,`T_Description`) VALUES (?,?,?,?,?)");
 						ps3.setLong(1, depo.getDesAccId());
 						ps3.setString(2,desTy);
 						ps3.setString(3, depo.getSource());
@@ -93,7 +93,7 @@ public class DepoDAO {
 						ps3.setString(5,"deposit");
 						ps3.execute();
 						ps3.close();
-						ps4 = con.prepareStatement("INSERT INTO `transactions`(`T_Cus_ID`,`T_Source_Acc_Type`,`T_Target_Acc_Type`,`T_Amount`,`T_Description`) VALUES (?,?,?,?,?)");
+						ps4 = con.prepareStatement("INSERT INTO `transactions`(`T_ACC_ID`,`T_Source_Acc_Type`,`T_Target_Acc_Type`,`T_Amount`,`T_Description`) VALUES (?,?,?,?,?)");
 						ps4.setLong(1, depo.getAccId());
 						ps4.setString(2,depo.getSource());
 						ps4.setString(3, desTy);

@@ -1,26 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-<%-- login status validation --%>
-<%
-	if(session.getAttribute("isLoggedIn")==null || !(session.getAttribute("isLoggedIn").equals("true"))){
-
-		session.setAttribute("login_msg", "Please login first to continue");
-		response.sendRedirect("login.jsp");
-	}
-	
-	else if(session.getAttribute("redirect_msg")!=null){  %>
-	<script>alert("<%=session.getAttribute("redirect_msg")%>")</script>
-	<% 
-		session.removeAttribute("redirect_msg");  
-  }
-  
- %>
-  
-
-
 <head>
   <title>FedChoice Bank </title>
   <meta charset="utf-8">
@@ -100,44 +79,37 @@
   <div class="container text-center">
     <h1>FedChoice Bank</h1>      
     <p>Banking & Retail </p>
-    <a href="processLogout.jsp"><button type="submit" class="btn btn-primary pull-right">logout</button></a>
   </div>
 </div>
 
-<%
-
-if(session.getAttribute("loginUserRole")==null || (session.getAttribute("loginUserRole").equals("customer_account_executive"))){
-
-%>
 
 <div class="container">    
   <div class="row">
-	
     <div class="col-md-3 col-sm-3 col-xs-3">
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="addUser.jsp" style="color:#fff;">CREATE CUSTOMER</div>
-        <div class="panel-body"><img src="img/CreateCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading" ><a href="https://www.google.com" style="color:#fff;">CREATE CUSTOMER</a></div>
+        <div class="panel-body"><img src="E:/TCSProject/CreateCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
     <div class="col-md-3 col-sm-3 col-xs-3">
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="UpdateCustomer.jsp" style="color:#fff;">UPDATE CUSTOMER</div>
-        <div class="panel-body"><img src="img/UpdateCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">UPDATE CUSTOMER</div>
+        <div class="panel-body"><img src="E:/TCSProject/UpdateCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
     <div class="col-md-3 col-sm-3 col-xs-3">
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="DeleteCustomer.jsp" style="color:#fff;">DELETE CUSTOMER</div>
-        <div class="panel-body"><img src="img/DeleteCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">DELETE CUSTOMER</div>
+        <div class="panel-body"><img src="E:/TCSProject/DeleteCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
 	 <div class="col-md-3 col-sm-3 col-xs-3">
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="SearchCustomer.jsp" style="color:#fff;">SEARCH CUSTOMER</div>
-        <div class="panel-body"><img src="img/SearchCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">SEARCH CUSTOMER</div>
+        <div class="panel-body"><img src="E:/TCSProject/SearchCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
@@ -149,62 +121,35 @@ if(session.getAttribute("loginUserRole")==null || (session.getAttribute("loginUs
   <div class="row">
     <div class="col-md-3 col-sm-3 col-xs-3">
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="ViewCustomerStatusController" style="color:#fff;">STATUS OF CUSTOMERS</div>
-        <div class="panel-body"><img src="img/Allcust.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">VIEW ALL CUSTOMER</div>
+        <div class="panel-body"><img src="E:/TCSProject/AllCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
     <div class="col-md-3 col-sm-3 col-xs-3"> 
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="CreateAccount_006.jsp" style="color:#fff;">CREATE ACCOUNT</div>
-        <div class="panel-body"><img src="img/CreateAccount.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">CREATE ACCOUNT</div>
+        <div class="panel-body"><img src="E:/TCSProject/CreateAccount.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
     <div class="col-md-3 col-sm-3 col-xs-3"> 
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="DeleteAccount_007.jsp" style="color:#fff;">DELETE ACCOUNT</div>
-        <div class="panel-body"><img src="img/DeleteAccount.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">DELETE ACCOUNT</div>
+        <div class="panel-body"><img src="E:/TCSProject/DeleteAccount.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
 	<div class="col-md-3 col-sm-3 col-xs-3">
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="ViewAccountStatusController" style="color:#fff;">STATUS OF ACCOUNTS</div>
-        <div class="panel-body"><img src="img/AccountStatement.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-heading"><a href="https://www.google.com" style="color:#fff;">VIEW STATEMENT OF ACCOUNT</div>
+        <div class="panel-body"><img src="E:/TCSProject/AccountStatement.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>
 	
   </div>
 </div><br><br>
 
-
-<%}else{
-
-%>
-
-
-<div class="container">    
-  <div class="row">
-    <div class="col-md-6 col-sm-6 col-xs-">
-      <div class="panel panel-primary">
-        <div class="panel-heading"><a href="searchAC.jsp" style="color:#fff;">PERFORM TRANSACTIONS / SEARCH ACCOUNT	</div>
-        <div class="panel-body"><img src="img/CreateCust.png" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-	
-    <div class="col-md-6 col-sm-6 col-xs-6"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading"><a href="printStatement.jsp" style="color:#fff;">PRINT STATEMENT</div>
-        <div class="panel-body"><img src="img/AccountStatement.png" class="img-responsive" style="width:100%" alt="Image"></div>
-      </div>
-    </div>
-	
-  </div>
-</div><br><br>
-
-
-<%}%>
 <div>
 <footer>
 

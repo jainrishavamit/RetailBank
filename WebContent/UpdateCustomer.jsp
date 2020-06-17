@@ -36,7 +36,9 @@
 
 
   <head>
-  <!-- you can include other files from here -->
+
+  <title>Update Customer</title>
+    <!-- you can include other files from here -->
 
 	<title>Update Customer</title>  
    <script type="text/javascript" src="js/updateCustomer.js"> </script>

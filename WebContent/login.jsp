@@ -31,7 +31,15 @@
 
                   
                   <%-- displaying redirection reason here --%>
-                  <% if(session.getAttribute("login_msg")!=null){  %>
+                  
+                  
+                  <% 
+              	if(session.getAttribute("isLoggedIn")!=null){
+            		response.sendRedirect("welcome.jsp");
+            	}
+
+                  
+                  if(session.getAttribute("login_msg")!=null){  %>
                 	<script>alert("<%=session.getAttribute("login_msg")%>")</script>
                 	<% 
                 		session.removeAttribute("login_msg");  

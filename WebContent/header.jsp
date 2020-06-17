@@ -29,57 +29,43 @@
           <ul class="nav navbar-nav">
             <li class="active"  > <a href="welcome.jsp" >Home</a></li>
 			
+<%
+
+if(session.getAttribute("loginUserRole")==null || (session.getAttribute("loginUserRole").equals("customer_account_executive"))){
+
+%>
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customer Management <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="addUser.jsp">Add Customer</a></li>
+                <li><a href="UpdateCustomer.jsp">Update Customer</a></li>
+                <li><a href="DeleteCustomer.jsp">Delete Customer</a></li>
+                <li><a href="SearchCustomer.jsp">Search Customer</a></li>
               </ul>
             </li>
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Managment <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="CreateAccount_006.jsp">Create Account</a></li>
+                <li><a href="DeleteAccount_007.jsp">Delete Account</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Status Details <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="ViewCustomerStatusController">Customer Status</a></li>
+                <li><a href="ViewAccountStatusController">Account Status</a></li>
               </ul>
             </li>
-			 <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Operations<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            
+<%}else{ %>            
 			
+                <li><a href="searchAC.jsp">Perform Transaction / Search Account</a></li>
+                <li><a href="printStatement.jsp">Print Statement</a></li>
+
+<%} %>			
 			 <li class="active"><a href="processLogout.jsp">Logout</a></li>
 			
           </ul>

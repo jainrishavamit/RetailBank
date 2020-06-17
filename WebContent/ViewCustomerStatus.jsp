@@ -43,6 +43,9 @@
 
 
   <head>
+  
+  
+  <title>View Customer Status</title>
   <!-- you can include other files from here -->
   
    <script type="text/javascript" src="js/viewCustomerStatus.js"> </script>

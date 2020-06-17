@@ -115,5 +115,30 @@
 		<url-pattern>/SearchCustomerController</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<description></description>
+		<servlet-name>createAcc</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.CreateAccountController_006</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createAcc</servlet-name>
+		<url-pattern>/CreateAccountController</url-pattern>
+	</servlet-mapping>
+
+
+	
+
+
+	<servlet>
+		<description></description>
+		<servlet-name>deleteAccount</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.DeleteAccountController_007</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteAccount</servlet-name>
+		<url-pattern>/DeleteAccountController</url-pattern>
+	</servlet-mapping>
+
 	
 </web-app>

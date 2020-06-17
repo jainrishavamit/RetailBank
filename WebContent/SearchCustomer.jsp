@@ -31,6 +31,7 @@
 <!-- %> -->
 
   <head>
+  <title>Search Customer</title>
   <!-- you can include other files from here -->
   
     <script type="text/javascript" src="js/searchCustomer.js"> </script> 

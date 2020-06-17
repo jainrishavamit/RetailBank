@@ -29,6 +29,7 @@
   <!-- you can include other files from here -->
   
   	
+  <title>Search Account</title>
    <script type="text/javascript" src="js/searchAC.js"> </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -65,7 +66,7 @@
 				<div class="form-group">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-6 col-xs-6 col-sm-6">Current Account Balance: </label>
-<input type="text" id="availableCurrentBalance" class=" col-md-6 col-xs-6 col-sm-6 control-group" readonly value="<%  out.print(session.getAttribute("customer_balanceC"));%>">
+<input type="text" id="availableCurrentBalance" class=" col-md-6 col-xs-6 col-sm-6 control-group" readonly value="<%  out.print(session.getAttribute("customer_balanceC")+".00");%>">
 				</div>
 				</div>
 				
@@ -183,7 +184,7 @@
 				<div class="form-group">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<label  class="col-md-6 col-xs-6 col-sm-6">Saving Acc Balance: </label>
-<input type="text" class=" col-md-6 col-xs-6 col-sm-6 control-group" readonly value="<%  out.print(session.getAttribute("customer_balanceS"));%>">
+<input type="text" class=" col-md-6 col-xs-6 col-sm-6 control-group" readonly value="<%  out.print(session.getAttribute("customer_balanceS")+".00");%>">
 				</div>
 				</div>
 				

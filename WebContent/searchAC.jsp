@@ -26,7 +26,7 @@
   
   <head>
   <!-- you can include other files from here -->
-  
+  <title>Search Account</title>
    <script type="text/javascript" src="js/searchAC.js"> </script>
 
 <%-- *****************  including header file ***************** --%>
