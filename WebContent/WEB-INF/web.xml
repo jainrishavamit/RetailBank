@@ -128,6 +128,16 @@
 
 
 	
+	<servlet>
+		<description></description>
+		<servlet-name>VAccSC</servlet-name>
+		<servlet-class>com.tcs.ilp.controller.AccStatementController_014</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VAccSC</servlet-name>
+		<url-pattern>/AccStatementController_014</url-pattern>
+	</servlet-mapping>
+	 	
 
 
 	<servlet>

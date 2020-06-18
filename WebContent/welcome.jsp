@@ -195,7 +195,7 @@ if(session.getAttribute("loginUserRole")==null || (session.getAttribute("loginUs
 	
     <div class="col-md-6 col-sm-6 col-xs-6"> 
       <div class="panel panel-primary">
-        <div class="panel-heading"><a href="printStatement.jsp" style="color:#fff;">PRINT STATEMENT</div>
+        <div class="panel-heading"><a href="AccStatement_014.jsp" style="color:#fff;">PRINT STATEMENT</div>
         <div class="panel-body"><img src="img/AccountStatement.png" class="img-responsive" style="width:100%" alt="Image"></div>
       </div>
     </div>

@@ -4,13 +4,12 @@
 <%--Importing all the dependent classes--%>
     
 <%@page import="java.util.ArrayList"%>      
-<%@page import="com.tcs.ilp.bean.CustomerBean"%>
-<%@ page import = "java.io.*,java.util.*" %>
-<%@ page import = "javax.servlet.*,java.text.*" %>
+<%@page import="com.tcs.ilp.bean.AccountBean"%>
+<%@ page import = "java.io.*,java.util.*,javax.servlet.*,java.text.*"%>
 
-<!DOCTYPE html>
+
+
 <html>
-   
 
 
 <%-- login status validation --%>
@@ -43,15 +42,9 @@
 
 
   <head>
-  
-  
-  <title>View Customer Status</title>
   <!-- you can include other files from here -->
   
    <script type="text/javascript" src="js/viewCustomerStatus.js"> </script>
-
-
-
 
 
 
@@ -67,10 +60,10 @@
 	<div class="boxcontainer">
 	
 	
-	<form id="form1" action="ViewCustomerStatusController" method="post" onsubmit="">
+	<form id="form1" action="ViewAccountStatusController" method="post" onsubmit="">
 		
 			
-		<h2>Customer Status</h2><br/><br/>
+		<h2>Account Status</h2><br/><br/>
 		
 	
 	<div class="col-md-12 col-sm-12 col-xs-12">
@@ -82,70 +75,48 @@
 	
 	<%
 	
-	if(session.getAttribute("customerStatus")!=null && session.getAttribute("customerStatus").equals("customersFound"))
+	if(session.getAttribute("accountStatus")!=null && session.getAttribute("accountStatus").equals("accountsFound"))
 	{
 		
-		
-	
-
-		
 	%>
-	
 				
-<!-- 			<div class="table-responsive mt-3" id="div_to_print">	 -->
+			<div id="div_to_print">	
 						
 <!-- 				<table border="1" class="table table-bordered table-hover" id="result_table" > -->
 				
-				
-				
-					<table  border="1" id="dataTablegrid">
-	
-	<!-- 					table header -->
-				
+					<table  border="1" id="dataTablegrid" >
 					<tr>
                           <th>Customer ID</th>
-                          <th>Customer SSN ID:</th>
-                          <th>Status</th>
+                          <th>Account ID</th>
+                          <th>Account Type</th>
+                          <th>Account Status</th>
                           <th>Message</th>
                           <th>Last Updated</th>
-                          <th>Operations</th>             
+                          <th>Operations</th>              
                     </tr>
-					
-					
-					
-
-					
 					<%
 
 
-					ArrayList<CustomerBean> cusList=(ArrayList<CustomerBean>)request.getAttribute("customerListinrequest");
-					for(CustomerBean cus: cusList)
+					ArrayList<AccountBean> accList=(ArrayList<AccountBean>)request.getAttribute("accountListinrequest");
+					for(AccountBean acc: accList)
 					{
-
-						
-						
-						       
 					
 					%>
-					
-					
-					
-<!-- 					table row entries -->
-					
 					<tr>
-						<td><% out.print(cus.getCustomer_id()); %></td>
-						<td><% out.print(cus.getCustomer_ssn_id()); %></td>
-						<td><% out.print(cus.getCustomer_is_active()==1?"<P STYLE=COLOR:GREEN>ACTIVE</P>":"<P STYLE=COLOR:RED>INACTIVE</P>"); %></td>
-						<td><% out.print(cus.getCustomer_message()); %></td>
+					
+						<td><% out.print(acc.getCustomer_id()); %></td>
+						<td><% out.print(acc.getAccount_id()); %></td>
+						<td><% out.print(acc.getAccount_type()=="S"?"<P>Savings</P>":"<P>Current</P>"); %></td>
+						<td><% out.print(acc.getAccount_status()==1?"<P STYLE=COLOR:GREEN>ACTIVE</P>":"<P STYLE=COLOR:RED>INACTIVE</P>"); %></td>
+						<td><% out.print(acc.getAccount_message()); %></td>
 						<td>
 							<%
 								SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss aa");
-								out.print(ft.format(cus.getLast_updated())); 
+								out.print(ft.format(acc.getLast_updated())); 
 						
 							%>
 						</td>
-						<td><a href="ViewCustomerStatusController">Refresh</a></td>
-						
+						<td><a href="ViewAccountStatusController">Refresh</a></td>
 					</tr>
 				
 				<%
@@ -155,27 +126,29 @@
 				
 				</table>
 				
-				
+			</div>	
 				
 				<%
 					
-				session.removeAttribute("customerStatus");
+				session.removeAttribute("accountStatus");
 	}
-	else if(session.getAttribute("customerStatus")!=null && session.getAttribute("customerStatus").equals("noCustomersToDisplay"))
+	else if(session.getAttribute("accountStatus")!=null && session.getAttribute("accountStatus").equals("noAccountsToDisplay"))
 	{
 		
-		%><script>alert("No Customers Found!")</script><%
-		session.removeAttribute("customerStatus");
+		%><script>alert("No Accounts Found!")</script><%
+		session.removeAttribute("accountStatus");
 	}
 	//else
 	//{
 		
-		//session.removeAttribute("customerStatus");
+		//session.removeAttribute("accountStatus");
 	//}
 				
 				%>
-				
-
+			
+			<a id="print_as_pdf" href="#" onClick="javascript:PrintDiv();">PRINT AS PDF</a>
+			<input type="button" name="save_as_excel" value="save_as_excel" id="save_as_excel" onClick="javascript:window.location.href='xyz.jsp'" >
+<!-- 			<input type="button" value="Export To Excel" onClick="javascript:window.location.href='xyz.jsp'"/> -->
 		
 	</form>
 </div>
@@ -260,4 +233,46 @@ tr:nth-child(even) {
 
 
 </script>
+
+<script language="javascript">
+        function PrintDiv() {
+            var divToPrint = document.getElementById('div_to_print');
+            var popupWin = window.open('', '_blank', 'width=766,height=300');
+            popupWin.document.open();
+            popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
+            popupWin.document.close();
+        }
+
+    </script>
+    
+    
+    <script type="text/javascript">
+        function fnExcelReport() {
+            var tab_text = 'html xmlns:x="urn:schemas-microsoft-com:office:excel">';
+            tab_text = tab_text + '<head><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>';
+            tab_text = tab_text + '<x:Name>Test Sheet</x:Name>';
+            tab_text = tab_text + '<x:WorksheetOptions><x:Panes></x:WorksheetOptions></x:ExcelWorksheet>';
+            tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
+
+            tab_text = tab_text + "<center><b>Transaction Statement</b></center>"
+
+            tab_text = tab_text + "<table border='1px solid'>";
+            tab_text = tab_text + $('#dataTablegrid').html();
+            tab_text = tab_text + '</table></body></html>';
+
+            var data_type = 'data:application/vnd.ms-excel';
+
+            $('#save_as_excel').attr('href', data_type + ',' + encodeURIComponent(tab_text));
+            $('#save_as_excel').attr('download', 'TransactionStatement.xls');
+
+        }
+
+    </script>
+    
+    <script>
+//     response.setContentType("application/vnd.ms-excel");
+//     response.setHeader("Pragma", "public");
+//     response.setHeader("Cache-Control", "max-age=0");
+    
+    </script>
 </html>

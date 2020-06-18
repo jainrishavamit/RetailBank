@@ -63,7 +63,7 @@ if(session.getAttribute("loginUserRole")==null || (session.getAttribute("loginUs
 <%}else{ %>            
 			
                 <li><a href="searchAC.jsp">Perform Transaction / Search Account</a></li>
-                <li><a href="printStatement.jsp">Print Statement</a></li>
+                <li><a href="AccStatement_014.jsp">Print Statement</a></li>
 
 <%} %>			
 			 <li class="active"><a href="processLogout.jsp">Logout</a></li>
